@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -11,9 +12,9 @@ namespace WebAPIForward.Controllers
 {
     public class ValuesController : ApiController
     {
-        private readonly string requestRoute = "/v2/feeds/295611432";
-        private readonly string host = "api.xively.com";
-        private readonly string apiKey = "8RLV5CvPiBRfFUs7y223S71bPTadYm8XKsHBHmNMDPWrKZr4";
+        private readonly string requestRoute = ConfigurationManager.AppSettings["requestRoute"];
+        private readonly string host = ConfigurationManager.AppSettings["host"];
+        private readonly string apiKey = ConfigurationManager.AppSettings["apiKey"];
         private readonly RestClient restClient;
 
         public ValuesController()
