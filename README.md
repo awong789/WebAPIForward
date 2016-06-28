@@ -1,6 +1,11 @@
 # WebAPIForward
 
-This Web Api forward request to Xively api. 
+Forward simple Get request to Xively API so you can monitor each data stream value. This web application to be hosted separately and act as a message forwarder to Xively API.
+```
+ [Device] --> [WebAPIForward] --> [Xively API] --> [Xively Dashboard]
+``` 
+ Xively connectivity can be specified in configuration file.
+
 ##Usage 
 Example request: 
 ```
