@@ -96,7 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -110,11 +112,13 @@
     </Compile>
     <Compile Include="Models\DataItem.cs" />
     <Compile Include="Models\DataStream.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\SensorRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="apiapp.json" />
+    <None Include="Properties\PublishProfiles\devicetrack123.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

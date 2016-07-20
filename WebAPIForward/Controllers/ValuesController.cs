@@ -35,12 +35,28 @@ namespace WebAPIForward.Controllers
                 latitude = latitude
             };
 
-            List<Models.DataStream> lDataStream = new List<Models.DataStream>();
-            lDataStream.Add(new Models.DataStream { id = "longitude", current_value = longitude });
-            lDataStream.Add(new Models.DataStream { id = "latitude", current_value = latitude });
+            //List<Models.DataStream> lDataStream = new List<Models.DataStream>();
+            //lDataStream.Add(new Models.DataStream { id = "longitude", current_value = longitude });
+            //lDataStream.Add(new Models.DataStream { id = "latitude", current_value = latitude });
 
-            Models.SensorRequest sRequest = new Models.SensorRequest() {
-                datastreams = lDataStream
+            //Models.SensorRequest sRequest = new Models.SensorRequest() {
+            //    datastreams = lDataStream
+            //};
+
+            Models.Location loc = new Models.Location()
+            {
+                disposition = "mobile",
+                name = "device #1", 
+                exposure = "outdoor", 
+                domain="physical",
+                ele = "100",
+                lat = float.Parse(latitude), 
+                lon = float.Parse(longitude)
+            };
+
+            Models.SensorRequest sRequest = new Models.SensorRequest()
+            {
+                location = loc
             };
 
             var strJsonContent = JsonConvert.SerializeObject(sRequest, Formatting.Indented, new JsonSerializerSettings { });

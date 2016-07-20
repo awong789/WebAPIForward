@@ -7,6 +7,7 @@ namespace WebAPIForward.Models
 {
     public class SensorRequest
     {
-        public List<DataStream> datastreams;
+        //public List<DataStream> datastreams;
+        public Location location;
     }
 }
